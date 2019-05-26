@@ -23,10 +23,13 @@
 	$queryalta = "INSERT INTO usuario(idUsuario,usuario,password,nombre,apaterno,amaterno,telefono,email,direccion,rol,activo) VALUES(".$idUsuario.",'".$usuario."','".$password."','".$nombre."','".$apaterno."','".$amaterno."','".$telefono."','".$correoe."','".$direccion."','c','t')";
 
 	if ($password != $confpassword) {
+		echo "Hubo un error en sus datos por faovr verifique que: \n\n 1.-La contraseña y su confirmación son iguales\n2.-";
+		sleep(10);
 		header('Location: signinform.html');
 	}else{
 		pg_query($conn,$queryalta) or die (pg_last_error());
 		pg_close($conn);
+		echo "Su registro se cumplio satisfactoriamente.\nRedirigiendolo a la pagina principal";
 		header('Location: index.php');
 	}
 ?>
