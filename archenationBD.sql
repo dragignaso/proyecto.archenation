@@ -8,13 +8,13 @@ GRANT ALL PRIVILEGES ON DATABASE archenationbd TO archenationadmin;
 
 CREATE TABLE usuario(
 idUsuario NUMERIC(2,0) NOT NULL,
-usuario VARCHAR(50) NOT NULL,
+usuario VARCHAR(50) NOT NULL UNIQUE,
 password CHAR(32) NOT NULL,
 nombre VARCHAR(60) NOT NULL,
 aPaterno VARCHAR(40) NOT NULL,
 aMaterno VARCHAR(40) NULL,
 telefono CHAR(12) NOT NULL,
-email VARCHAR(60) NOT NULL,
+email VARCHAR(60) NOT NULL UNIQUE,
 direccion VARCHAR(150) NOT NULL,
 rol CHAR(1) NOT NULL,
 activo BOOLEAN NOT NULL,
@@ -48,11 +48,13 @@ idVenta NUMERIC(3,0) NOT NULL,
 idUsuario NUMERIC(2,0) NOT NULL,
 fechaVenta TIMESTAMP NOT NULL,
 totalVenta NUMERIC(8,2) NOT NULL,
+status CHAR(1) NOT NULL,
 CONSTRAINT pkVenta PRIMARY KEY(idVenta),
 CONSTRAINT fkVentaUsuario FOREIGN kEY(idUsuario) REFERENCES usuario(idUsuario)
 ON UPDATE CASCADE
 ON DELETE RESTRICT,
-CONSTRAINT verificarTotalVenta CHECK(totalVenta >= 0));
+CONSTRAINT verificarTotalVenta CHECK(totalVenta >= 0),
+CONSTRAINT verificarStatusVenta CHECK(status ~ 't|p|c'));
 
 CREATE TABLE entrega(
 idEntrega NUMERIC(3,0) NOT NULL,
@@ -86,7 +88,7 @@ CONSTRAINT verificarCantidadVenta CHECK (cantidad > 0),
 CONSTRAINT verificarIva CHECK (iva > 0.0),
 CONSTRAINT verificarPrecioFInal CHECK (precioFinal > 0));
 
-GRANT INSERT, SELECT (usuario,password,nombre,aPaterno,aMaterno,telefono,email,direccion), UPDATE (usuario,password,nombre,aPaterno,aMaterno,telefono,email,direccion) ON usuario TO archenationclient;
+GRANT INSERT, SELECT, UPDATE (usuario,password,nombre,aPaterno,aMaterno,telefono,email,direccion) ON usuario TO archenationclient;
 GRANT INSERT, SELECT , UPDATE (usuario,password,nombre,aPaterno,aMaterno,telefono,email,direccion,activo), DELETE ON usuario TO archenationuser;
 
 GRANT SELECT (idArticulo,nombre,descripcion,imagen,precio,cantidad,enDescuento,porcentajeDescuento,activo), UPDATE, INSERT,DELETE ON articulo TO archenationuser;
@@ -95,11 +97,11 @@ GRANT SELECT (nombre,descripcion,imagen,precio,cantidad,enDescuento,porcentajeDe
 GRANT SELECT, INSERT ON entrega TO archenationclient;
 GRANT SELECT, INSERT, UPDATE ON entrega TO archenationuser;
 
-GRANT INSERT, SELECT ON venta TO archenationclient;
-GRANT INSERT, SELECT, UPDATE ON venta TO archenationuser;
+GRANT INSERT, SELECT, DELETE, UPDATE ON venta TO archenationclient;
+GRANT INSERT, SELECT, UPDATE, DELETE ON venta TO archenationuser;
 
-GRANT INSERT, SELECT ON contenidoVenta TO archenationclient;
-GRANT INSERT, SELECT, UPDATE ON contenidoVenta TO archenationuser;
+GRANT INSERT, SELECT,INSERT,UPDATE ON contenidoVenta TO archenationclient;
+GRANT INSERT, SELECT, UPDATE, INSERT ON contenidoVenta TO archenationuser;
 
 GRANT SELECT, UPDATE, DELETE, INSERT ON usuario TO archenationadmin;
 GRANT SELECT, UPDATE, DELETE, INSERT ON articulo TO archenationadmin;

@@ -8,22 +8,25 @@
 	$direccion = $_POST['direccion'];
 	$password = md5($_POST['password']);
 	$confpassword = md5($_POST['confpassword']);
-	$queryindex = "SELECT COUNT(idUsuario) FROM usuarios";
+	$queryindex = "SELECT MAX(idUsuario) FROM usuario";
 	$conn = pg_connect("host=127.0.0.1 port=5432 dbname=archenationbd user=archenationclient password=archeclient") or die();
 
-	//$result pg_query($conn, $queryindex) or die (pg_last_error());
+	$result = pg_query($conn, $queryindex) or die (pg_last_error());
 
-	//pg_close($conn);
+	$row = pg_fetch_row($result);
 
-	//$idusuario = $result + 1;
-	$queryalta = "INSERT INTO usuario (idUsuario,usuario,password,nombre,apaterno,amaterno,telefono,email,direccion,rol,activo) VALUES(1,'".$usuario."','".$password."','".$nombre."','".$apaterno."','".$amaterno."','".$telefono."','".$correoe."','".$direccion."','c','t')";
+	$idUsuario = $row[0] + 1;
+	echo 'El index es'.$idUsuario;
+
+	$idUsuario = (string)$idUsuario;
+	
+	$queryalta = "INSERT INTO usuario(idUsuario,usuario,password,nombre,apaterno,amaterno,telefono,email,direccion,rol,activo) VALUES(".$idUsuario.",'".$usuario."','".$password."','".$nombre."','".$apaterno."','".$amaterno."','".$telefono."','".$correoe."','".$direccion."','c','t')";
 
 	if ($password != $confpassword) {
 		header('Location: signinform.html');
 	}else{
-		pg_query($conn,$queryalta) or die(pg_last_error());
+		pg_query($conn,$queryalta) or die (pg_last_error());
 		pg_close($conn);
-
-		echo 'El PASSWORD ES IGUAL';
+		header('Location: index.php');
 	}
 ?>
