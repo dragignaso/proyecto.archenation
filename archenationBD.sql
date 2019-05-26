@@ -39,8 +39,8 @@ porcentajeDescuento NUMERIC(4,1) NOT NULL,
 activo BOOLEAN NOT NULL,
 CONSTRAINT pkArticulo PRIMARY KEY(idArticulo),
 CONSTRAINT verificarImagen CHECK (imagen ~ '[A-Za-z0-9ÁÉÍÓÚáéíóúüÜ]+.(jpg|jpeg|png|gif)$'),
-CONSTRAINT verificarPrecio CHECK (precio => 0.00),
-CONSTRAINT verificarCantidad CHECK (cantidad => 0),
+CONSTRAINT verificarPrecio CHECK (precio >= 0.00),
+CONSTRAINT verificarCantidad CHECK (cantidad >= 0),
 CONSTRAINT verificarDescuento CHECK (porcentajeDescuento > 0.0 AND porcentajeDescuento <= 100.0));
 
 CREATE TABLE venta(
@@ -85,3 +85,26 @@ ON UPDATE RESTRICT,
 CONSTRAINT verificarCantidadVenta CHECK (cantidad > 0),
 CONSTRAINT verificarIva CHECK (iva > 0.0),
 CONSTRAINT verificarPrecioFInal CHECK (precioFinal > 0));
+
+GRANT INSERT, SELECT (usuario,password,nombre,aPaterno,aMaterno,telefono,email,direccion), UPDATE (usuario,password,nombre,aPaterno,aMaterno,telefono,email,direccion) ON usuario TO archenationclient;
+GRANT INSERT, SELECT , UPDATE (usuario,password,nombre,aPaterno,aMaterno,telefono,email,direccion,activo), DELETE ON usuario TO archenationuser;
+
+GRANT SELECT (idArticulo,nombre,descripcion,imagen,precio,cantidad,enDescuento,porcentajeDescuento,activo), UPDATE, INSERT,DELETE ON articulo TO archenationuser;
+GRANT SELECT (nombre,descripcion,imagen,precio,cantidad,enDescuento,porcentajeDescuento,activo) ON articulo TO archenationclient;
+
+GRANT SELECT, INSERT ON entrega TO archenationclient;
+GRANT SELECT, INSERT, UPDATE ON entrega TO archenationuser;
+
+GRANT INSERT, SELECT ON venta TO archenationclient;
+GRANT INSERT, SELECT, UPDATE ON venta TO archenationuser;
+
+GRANT INSERT, SELECT ON contenidoVenta TO archenationclient;
+GRANT INSERT, SELECT, UPDATE ON contenidoVenta TO archenationuser;
+
+GRANT SELECT, UPDATE, DELETE, INSERT ON usuario TO archenationadmin;
+GRANT SELECT, UPDATE, DELETE, INSERT ON articulo TO archenationadmin;
+GRANT SELECT, UPDATE, DELETE, INSERT ON entrega TO archenationadmin;
+GRANT SELECT, UPDATE, DELETE, INSERT ON venta TO archenationadmin;
+GRANT SELECT, UPDATE, DELETE, INSERT ON contenidoVenta TO archenationadmin;
+
+INSERT INTO usuario VALUES(1,'archeadmin00','4rch3n4t10n','Marvin','Rayas','Sanchez','5547139929','naruhina1189@gmail.com','Casa de Marvin','a','t');
