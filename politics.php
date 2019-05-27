@@ -27,16 +27,16 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="who.php">Quienes somos</a>
+                  <a class="nav-link js-scroll-trigger" href="#compra">Compra</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="signinform.html">Registrese aqui</a>
+                  <a class="nav-link js-scroll-trigger" href="#pago">Pago</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="loginform.html">Iniciar sesión</a>
+                  <a class="nav-link js-scroll-trigger" href="#envio">Envío</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="contactoform.php">Contáctanos</a>
+                  <a class="nav-link js-scroll-trigger" href="#devolucion">Devolución</a>
                 </li>
             </ul>
           </div>
