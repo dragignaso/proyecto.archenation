@@ -13,6 +13,7 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <link href="css/style.css" rel="stylesheet">
+  <link rel="icon" type="image/vnd.microsoft.icon" href="img/logo.ico" sizes="16x16 24x24 36x36 48x48">
 
 </head>
 
