@@ -111,4 +111,13 @@ GRANT SELECT, UPDATE, DELETE, INSERT ON contenidoVenta TO archenationadmin;
 
 INSERT INTO usuario VALUES(1,'archeadmin00','5e11fe1a3872ea9a45da85ef85bbe1d6','Marvin','Rayas','Sanchez','5547139929','naruhina1189@gmail.com','Casa de Marvin','a','t');
 INSERT INTO articulo VALUES(1,'Arco Recurvo 30lb','Arco de PVC Industrial de 30 libras','arco1.jpg',600.00,30,'t',10.0,'t');
+INSERT INTO articulo VALUES(2,'Arco Recurvo 32lb','Arco de PVC Industrial de 32 libras','arco2.jpg',600.00,20,'f',0.0,'t');
+INSERT INTO articulo VALUES(3,'Arco Recurvo 35lb','Arco de PVC Industrial de 35 libras','arco3.jpg',600.00,20,'f',0.0,'t');
+INSERT INTO articulo VALUES(4,'Arco Recurvo 38lb','Arco de PVC Industrial de 38 libras','arco4.jpg',600.00,20,'f',0.0,'t');
+INSERT INTO articulo VALUES(5,'Arco Recurvo 40lb','Arco de PVC Industrial de 40 libras','arco5.jpg',600.00,20,'f',0.0,'t');
+INSERT INTO articulo VALUES(6,'Arco Recurvo 30lb Tigre Toño','Arco de PVC Industrial de 30 libras con diseño de tigre, tipo el tigre Toño','arco6.jpg',700.00,5,'t',5.0,'t');
+INSERT INTO articulo VALUES(7,'Arco Recurvo 30lb Naranja','Arco de PVC Industrial de 30 libras con diseño naranja y cintas de colores','arco7.jpg',650.00,30,'t',10.0,'t');
+INSERT INTO articulo VALUES(8,'Docena de Flechas','Flechas de madera para tirar','flechas.jpg',300.00,20,'f',0.0,'t');
+INSERT INTO articulo VALUES(9,'Arco Recurvo 42lb','Arco de PVC Industrial de 42 libras','arco8.jpg',700.00,10,'t',10.0,'t');
+INSERT INTO articulo VALUES(10,'Arco Recurvo 25lb','Arco de PVC de 25 libras para novatos','arco9.jpg',600.00,5,'f',0.0,'t');
 #La contraseña de archeadmin es 4rch3n4t10n
