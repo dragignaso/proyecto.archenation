@@ -47,31 +47,27 @@
   	</header>
 
   	<div class="container">
-    	<div class="row align-items-center my-5">
-      		<div class="col-lg-7">
-        		<img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
-      		</div>
+    		<div class="row align-items-center my-5">
+      			<div class="col-lg-7">
+        			<img class="img-fluid rounded mb-4 mb-lg-0" src="img/recurvos.jpg" alt="">
+      			</div>
       
-      		<div class="col-lg-5">
-        		<h1 class="font-weight-light">Arcos recurvos</h1>
-        		<p>Arcos resistentes y cómodos para maniobrar con ellos.</p>
+      			<div class="col-lg-5">
+        			<h1 class="font-weight-light">Arcos recurvos</h1>
+        			<p>Arcos resistentes y cómodos para maniobrar con ellos.</p>
+      			</div>
+    		</div>
+		
+      		<div class="row align-items-center my-5">
+      			<div class="col-lg-5">
+            			<h1 class="font-weight-light">Arcos de fantasía</h1>
+            			<p>¿Quieres ser como tu arquero favorito? <br> Nosotros podemos darte su arco.</p>
+          		</div>
+          		<div class="col-lg-7">
+            			<img class="img-fluid rounded mb-4 mb-lg-0" src="img/fantasia.jpg" alt="">
+          		</div>
       		</div>
     	</div>
-    </div>
-
-  	<div class="container">
-    	<div class="row align-items-center my-5">
-			<div class="col-lg-5">
-        		<h1 class="font-weight-light">Arcos de fantasía</h1>
-        		<p>¿Quieres ser como tu arquero favorito? <br> Nosotros podemos darte su arco.</p>
-      		</div>
-      		<div class="col-lg-7">
-        		<img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
-      		</div>
-      
-
-    	</div>
-    </div>
 	
 	<?php
 
