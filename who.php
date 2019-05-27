@@ -78,7 +78,7 @@
         </address>
         <address>
           <abbr title="Nuestro teléfono">Teléfono:</abbr>
-          (56)1098-5755
+          (55)5302-8624
           <br>
           <abbr title="Nuestro correo electrónico">Correo:</abbr>
           <a href="mailto:archenation@gmail.com">archenation@gmail.com</a>
@@ -123,9 +123,50 @@
           </div>
         </div>
       </div>
-    </div>
 
+    <div class="row">
+    <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="img/profesional.jpg" alt="profesional">
+          <div class="card-body">
+            <h4 class="card-title">Profesionalismo</h4>
+            <p class="card-text">Nos referimos a este valor a la seriedad que tomamos con nuestros clientes, además del involucramiento y a la dedicación de todo el equipo de trabajo en todas nuestras actividades.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="http://placehold.it/300x200" alt="cercanos">
+          <div class="card-body">
+            <h4 class="card-title">Cerca de ti</h4>
+            <p class="card-text">Lo que nos caracteriza es el hecho de que queremos acercar a nuestros clientes a productos de arquería para poder difundir más el deporte, por lo tanto tenemos productos baratos y funcionales para todo tipo de gente.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <img class="card-img-top" src="http://placehold.it/300x200" alt="esfuezo">
+          <div class="card-body">
+            <h4 class="card-title">Esforzándonos continuamente</h4>
+            <p class="card-text">Detrás de cada uno de nuestros productos está el esfuerzo y compromiso de muchos de nuestros colaboradores.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+    <div class="container">
+      <div class="row align-items-center my-5">
+          <div class="col-lg-7">
+            <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
+          </div>
+      
+          <div class="col-lg-5">
+            <h2 class="font-weight-light">Nuestra historia</h2>
+            <p>Archenation nace con una idea, la idea de que toda la gente pueda disfrutar del deporte de la arquería sin tener que pagar dinero en exceso para poder cumplirlo, siempre se piensa que esa visión es algo muy lejano, algo que solo se puede ver por la tele o en películas.</p>
+          </div>
+      </div>
+    </div>
 
   <footer class="py-5 bg-dark">
       <div class="container">
