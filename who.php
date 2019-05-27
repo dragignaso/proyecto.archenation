@@ -135,7 +135,7 @@
       </div>
       <div class="col-md-4 mb-5">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/300x200" alt="cercanos">
+          <img class="card-img-top" src="img/cerca.jpg" alt="cercanos">
           <div class="card-body">
             <h4 class="card-title">Cerca de ti</h4>
             <p class="card-text">Lo que nos caracteriza es el hecho de que queremos acercar a nuestros clientes a productos de arquería para poder difundir más el deporte, por lo tanto tenemos productos baratos y funcionales para todo tipo de gente.</p>
@@ -144,7 +144,7 @@
       </div>
       <div class="col-md-4 mb-5">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/300x200" alt="esfuezo">
+          <img class="card-img-top" src="img/exito.jpg" alt="esfuezo">
           <div class="card-body">
             <h4 class="card-title">Esforzándonos continuamente</h4>
             <p class="card-text">Detrás de cada uno de nuestros productos está el esfuerzo y compromiso de muchos de nuestros colaboradores.</p>
@@ -158,7 +158,7 @@
     <div class="container">
       <div class="row align-items-center my-5">
           <div class="col-lg-7">
-            <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
+            <img class="img-fluid rounded mb-4 mb-lg-0" src="img/historia.jpg" alt="historia">
           </div>
       
           <div class="col-lg-5">
