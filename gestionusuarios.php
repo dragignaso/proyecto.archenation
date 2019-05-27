@@ -13,6 +13,7 @@
 				<a href="bajaUsrF.php">Baja Usuario</a>
 				<a href="modificarUsrF.php">Modificar Usuario</a>
 				<a href="consultaUsrF.php">Consultar Usuario</a>
+				<a href="index.php">Menú principal</a>
 			</body>
 			</html>
 		';
