@@ -98,7 +98,7 @@
     <div class="row">
       <div class="col-md-4 mb-5">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/300x200" alt="inovacion">
+          <img class="card-img-top" src="img/competitivo.jpg" alt="innovacion">
           <div class="card-body">
             <h4 class="card-title">Competitividad e innovación</h4>
             <p class="card-text">Cada uno de los productos que usted compre en Archenation lleva detrás un trabajo de diseño, preocupados por el funcionamiento óptimo.</p>
@@ -107,7 +107,7 @@
       </div>
       <div class="col-md-4 mb-5">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/300x200" alt="respeto">
+          <img class="card-img-top" src="img/respeto.jpg" alt="respeto">
           <div class="card-body">
             <h4 class="card-title">Practicamos el trato respetuoso</h4>
             <p class="card-text">Los acuerdos que haga con nosotros serán guiados por la motivación y aceptación, cumpliendo con la mejor disposición con sus pedidos.</p>
@@ -116,7 +116,7 @@
       </div>
       <div class="col-md-4 mb-5">
         <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/300x200" alt="integridad">
+          <img class="card-img-top" src="img/integridad.jpg" alt="integridad">
           <div class="card-body">
             <h4 class="card-title">Integridad laboral</h4>
             <p class="card-text">Nos destacamos principalmente en actuar apegados a los principios anteriores, además de actuar siempre con honestidad.</p>
