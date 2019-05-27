@@ -57,7 +57,6 @@
     </div>
   </header>
 
-  <!-- Page Content -->
   <div class="container">
 
     <div class="row">
@@ -123,7 +122,7 @@
           </div>
         </div>
       </div>
-
+    </div>
     <div class="row">
     <div class="col-md-4 mb-5">
         <div class="card h-100">
@@ -154,6 +153,7 @@
       </div>
     </div>
   </div>
+</div>
 
     <div class="container">
       <div class="row align-items-center my-5">
