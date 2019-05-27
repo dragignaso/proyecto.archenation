@@ -108,7 +108,8 @@
 			echo '
 				<a href="gestionusuarios.php">Gestion de usuarios</a>
 				<a href="gestionarticulos.php">Gestion de artículos</a>
-			';
+';
+			echo '<a href="logout.php">Cerrar sesión</a>';
 			}
 		}
 	?>
