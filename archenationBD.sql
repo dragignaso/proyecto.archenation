@@ -109,4 +109,6 @@ GRANT SELECT, UPDATE, DELETE, INSERT ON entrega TO archenationadmin;
 GRANT SELECT, UPDATE, DELETE, INSERT ON venta TO archenationadmin;
 GRANT SELECT, UPDATE, DELETE, INSERT ON contenidoVenta TO archenationadmin;
 
-INSERT INTO usuario VALUES(1,'archeadmin00','4rch3n4t10n','Marvin','Rayas','Sanchez','5547139929','naruhina1189@gmail.com','Casa de Marvin','a','t');
+INSERT INTO usuario VALUES(1,'archeadmin00','5e11fe1a3872ea9a45da85ef85bbe1d6','Marvin','Rayas','Sanchez','5547139929','naruhina1189@gmail.com','Casa de Marvin','a','t');
+INSERT INTO articulo VALUES(1,'Arco Recurvo 30lb','Arco de PVC Industrial de 30 libras','arco1.jpg',600.00,30,'t',10.0,'t');
+#La contraseña de archeadmin es 4rch3n4t10n
