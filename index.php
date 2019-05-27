@@ -77,7 +77,7 @@
 
 		session_start();
 		if($_SESSION['id'] == 1){
-			$usuario = $_GET['usr'];
+			$usuario = $_SESSION['usr'];
 			$queryUsuario = "SELECT nombre,apaterno,amaterno FROM usuario WHERE usuario = '".$usuario."'";
 			$conn = pg_connect("host=127.0.0.1 port=5432 dbname=archenationbd user=archenationclient password=archeclient") or die();
 
@@ -91,7 +91,7 @@
 			echo "Bienvenido ".$nombreUsr." ".$aPaternoUsr." ".$aMaternoUsr;
 		}else{
 			if($_SESSION['id'] == 99){
-			$usuario = $_GET['usr'];
+			$usuario = $_SESSION['usr'];
 			$queryUsuario = "SELECT nombre,apaterno,amaterno FROM usuario WHERE usuario = '".$usuario."'";
 			$conn = pg_connect("host=127.0.0.1 port=5432 dbname=archenationbd user=archenationclient password=archeclient") or die();
 
@@ -104,10 +104,13 @@
 			$aMaternoUsr = $row[2];
 			echo "Bienvenido ".$nombreUsr." ".$aPaternoUsr." ".$aMaternoUsr;
 			echo "Modo Admin";
+
+			echo '
+				<a href="gestionusuarios.php">Gestion de usuarios</a>
+				<a href="gestionarticulos.php">Gestion de artículos</a>
+			';
 			}
 		}
-		session_destroy();
-
 	?>
 
   	<footer class="py-5 bg-dark">

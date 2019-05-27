@@ -18,11 +18,13 @@
 		switch ($rol) {
 			case 'c':
 				$_SESSION['id'] = 1;
-				header('Location: index.php?usr='.$usuario);
+				$_SESSION['usr'] = $usuario;
+				header('Location: index.php');
 				break;
 			case 'a':
 				$_SESSION['id'] = 99;
-				header('Location: index.php?usr='.$usuario);
+				$_SESSION['usr'] = $usuario;
+				header('Location: index.php');
 				break;
 			default:
 				# code...
