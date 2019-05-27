@@ -114,12 +114,14 @@
 		}
 	?>
 
-  	<footer class="py-5 bg-dark">
-    	<div class="container">
-      		<p class="m-0 text-center text-white">Copyright &copy; Archenation. 2019</p>
-    	</div>
+  	 	<footer class="py-5 bg-dark">
+      <div class="container">
+          <p class="m-0 text-center text-white">Copyright &copy; Archenation. 2019 <br><br> <a href="credits.php">Créditos</a> | <a href="politics.php">Políticas</a> </p>
+          <br>
+          
+      </div>
     
-  	</footer>
+    </footer>
 
     <script src="vendor/jquery/jquery.min.js"></script>
   	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
