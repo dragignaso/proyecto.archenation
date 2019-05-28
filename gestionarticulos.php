@@ -14,6 +14,7 @@
 				<a href="bajaArtF.php">Baja Artículo</a>
 				<a href="modificarArtF.php">Modificar Artículo</a>
 				<a href="consultaArtF.php">Consultar Artículo</a>
+				<a href="index.php">Menú Principal</a>
 			</body>
 			</html>
 		';

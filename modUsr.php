@@ -61,7 +61,7 @@
 				<meta charset="UTF-8">
 			</head>
 			<body>
-				<p>El se actualizo correctamente</p>
+				<p>El usuario se actualizó correctamente</p>
 				<a href = "gestionusuarios.php">Regresar</a>
 			</body>
 			</html>
