@@ -25,14 +25,21 @@
         		<span class="navbar-toggler-icon"></span>
       		</button>
       		<div class="collapse navbar-collapse" id="navbarResponsive">
-        		<ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#">Tu carrito</a>
-                </li>
-          			<li class="nav-item">
-            			<a class="nav-link js-scroll-trigger" href="#">Cerrar sesión</a>
-          			</li>
-        		</ul>
+        		<?php
+            session_start();
+            if($_SESSION['id'] == 1){
+              echo '
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="#">Tu carrito</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="logout.php">Cerrar sesión</a>
+                    </li>
+                </ul>
+              ';
+            }
+            ?>
       		</div>
     	</div>
   	</nav>
@@ -40,15 +47,13 @@
   	  <div class="container">
 
     <div class="row">
-
       <div class="col-lg-3"><h2>_</h2>
 
-        <h1 class="my-4">Nuestros artículos</h1>
+        <h1 class="my-4">Archenation Shop</h1>
         <div class="list-group">
-          <a href="#" class="list-group-item">Arcos de fantasía</a>
-          <a href="#" class="list-group-item">Arcos recurvos</a>
+          <!--<a href="#" class="list-group-item">Arcos de fantasía</a>
+          <a href="#" class="list-group-item">Arcos recurvos</a>-->
         </div>
-
       </div>
       <!-- /.col-lg-3 -->
 
@@ -82,103 +87,53 @@
         </div>
 
         <div class="row">
+          <?php
+          $queryindex = "SELECT MAX(idArticulo) FROM articulo";
+          $querycontenido = "SELECT nombre,descripcion,imagen,precio,cantidad,enDescuento,porcentajeDescuento,activo FROM articulo";
+          $conn = pg_connect("host=127.0.0.1 port=5432 dbname=archenationbd user=archenationuser password=archeuser1234") or die();
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item One</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
+          $result = pg_query($conn, $queryindex) or die (pg_last_error());
+          $row = pg_fetch_row($result);
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Two</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
+          $maxArt = $row[0];
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Three</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
+          $result = pg_query($conn, $querycontenido) or die (pg_last_error());
+          $row = pg_fetch_all($result);
+          pg_close();
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Four</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
+          echo ''.$row[0]['endescuento'];
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Five</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
+          for($cont = 0;$cont < $maxArt;$cont++){
+            $nombreArt = $row[$cont]['nombre'];
+            $descripcionArt = $row[$cont]['descripcion'];
+            $imagenArt = $row[$cont]['imagen'];
+            $precioArt = $row[$cont]['precio'];
+            $cantidadArt = $row[$cont]['cantidad'];
+            $enDescuentoArt = $row[$cont]['endescuento'];
+            $porcentajeDescuentoArt = $row[$cont]['porcentajedescuento'];
+            $activoArt = $row[$cont]['activo'];
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Six</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+            if($activoArt == 't'){
+              echo '
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                  <a href="articulo.php?art='.$nombreArt.'"><img class="card-img-top" src="/img/articulos/'.$imagenArt.'" alt=""></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="articulo.php?art='.$nombreArt.'">'.$nombreArt.'</a>
+                    </h4>
+                    <h5>$'.$precioArt.'</h5>
+                    <p class="card-text">'.$descripcionArt.'</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                  </div>
+                </div>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
-            </div>
-          </div>
-
+              ';
+            }
+          }
+          ?>
         </div>
         <!-- /.row -->
 

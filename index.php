@@ -26,16 +26,54 @@
         		<ul class="navbar-nav ml-auto">
         			<li class="nav-item">
             			<a class="nav-link js-scroll-trigger" href="who.php">Quienes somos</a>
-          			</li>
-          			<li class="nav-item">
-            			<a class="nav-link js-scroll-trigger" href="signinform.html">Registrese aqui</a>
-          			</li>
-          			<li class="nav-item">
-            			<a class="nav-link js-scroll-trigger" href="loginform.html">Iniciar sesión</a>
-          			</li>
+				</li>
+				<?php
+					session_start();
+					if($_SESSION['id'] != 1 && $_SESSION['id'] != 99){
+						echo '
+						<li class="nav-item">
+            					<a class="nav-link js-scroll-trigger" href="signinform.html">Registrese aqui</a>
+          					</li>
+          					<li class="nav-item">
+            					<a class="nav-link js-scroll-trigger" href="loginform.html">Iniciar sesión</a>
+						</li>
+						';
+					}
+				?>
           			<li class="nav-item">
             			<a class="nav-link js-scroll-trigger" href="contactoform.php">Contáctanos</a>
-          			</li>
+				</li>
+				<?php
+				session_start();
+				if($_SESSION['id'] == 1){
+					echo'
+					<li class="nav-item">
+					<a class="nav-link js-scroll-trigger" href="tienda.php">Productos</a>
+					</li>
+					';
+				}else{
+					if($_SESSION['id'] == 99){
+						echo '
+						<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="gestionusuarios.php">Gestión Usuarios</a>
+						</li>
+						<li class="nav-item">
+						<a class="nav-link js-scroll-trigger" href="gestionarticulos.php">Gestión Articulos</a>
+						</li>
+						';
+					}
+				}
+				?>
+				<?php
+				session_start();
+				if($_SESSION['id'] == 1 || $_SESSION['id'] == 99){
+				echo '	
+				<li class="nav-item">
+				<a class="nav-link js-scroll-trigger" href="logout.php">Cerrar Sesión</a>
+				</li>
+				';
+				}
+				?>
         		</ul>
       		</div>
     	</div>
