@@ -45,7 +45,7 @@
 				</li>
 				<?php
 				session_start();
-				if($_SESSION['id'] == 1){
+				if($_SESSION['id'] != 99){
 					echo'
 					<li class="nav-item">
 					<a class="nav-link js-scroll-trigger" href="tienda.php">Productos</a>

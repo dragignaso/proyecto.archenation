@@ -29,12 +29,19 @@
                 <li class="nav-item">
                   <a class="nav-link js-scroll-trigger" href="tienda.php">Productos</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#">Tu carrito</a>
-                </li>
-          			<li class="nav-item">
-            			<a class="nav-link js-scroll-trigger" href="logout.php">Cerrar sesión</a>
-          			</li>
+                <?php
+                session_start();
+                if($_SESSION['id'] == 1){
+                  echo '
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="carrito.php">Tu carrito</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link js-scroll-trigger" href="logout.php">Cerrar sesión</a>
+                    </li>
+                  ';
+                }
+                ?>
         		</ul>
       		</div>
     	</div>
@@ -54,20 +61,22 @@
 
       <div class="col-lg-9"><h2>_</h2>
         <?php
+          session_start();
           $nombreTemp = $_GET['art'];
-          $querycontenido = "SELECT nombre,descripcion,imagen,precio,cantidad,enDescuento,porcentajeDescuento FROM articulo WHERE nombre = '".$nombreTemp."'";
+          $querycontenido = "SELECT idArticulo,nombre,descripcion,imagen,precio,cantidad,enDescuento,porcentajeDescuento FROM articulo WHERE nombre = '".$nombreTemp."'";
           $conn = pg_connect("host=127.0.0.1 port=5432 dbname=archenationbd user=archenationuser password=archeuser1234") or die();
 
           $result = pg_query($conn, $querycontenido) or die (pg_last_error());
           $row = pg_fetch_row($result);
 
-          $nombreArt = $row[0];
-          $descripcionArt = $row[1];
-          $imagenArt = $row[2];
-          $precioArt = $row[3];
-          $cantidadArt = $row[4];
-          $enDescuentoArt = $row[5];
-          $porcentajeDescuentoArt = $row[6];
+          $idArticulo = $row[0];
+          $nombreArt = $row[1];
+          $descripcionArt = $row[2];
+          $imagenArt = $row[3];
+          $precioArt = $row[4];
+          $cantidadArt = $row[5];
+          $enDescuentoArt = $row[6];
+          $porcentajeDescuentoArt = $row[7];
 
           echo '
           <div class="card mt-4">
@@ -75,7 +84,27 @@
             <div class="card-body">
               <h3 class="card-title">'.$nombreArt.'</h3>
               <h4>$'.$precioArt.'</h4>
-              <p class="card-text">'.$descripcionArt.'</p>
+              <p class="card-text">'.$descripcionArt.'</p>';
+          if($cantidadArt > 0 && $_SESSION['id'] == 1){
+            echo'
+                <form name="compraarticulo" action="compra.php" method="post">
+                  <label for="cantidad">Cantidad: </label>
+                  <input type="number" name="cantidad" min="1" max="'.$cantidadArt.'" value="1"><br />
+                  <input type="hidden" name="idarticulo" value="'.$idArticulo.'"><br />
+                  <input type="submit" name="submit" value="Agregar al Carrito">
+                </form>
+            ';
+          }else{
+            if($cantidadArt <= 0 && $_SESSION['id'] == 1){
+              echo '<p>Producto Agotado</p>';
+            }else{
+              echo '<p>Necesitas estar logueado para comprar</p>
+                  <a href="loginform.html">Clic aqui para iniciar sesión</a><br />
+                  <a href="signinform.html">Clic aqui si aún no tienes cuenta</a><br />
+              ';
+            }
+          }
+          echo '
               <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
               4.0 stars
             </div>

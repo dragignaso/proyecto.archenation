@@ -16,6 +16,12 @@
 <link rel="icon" type="image/vnd.microsoft.icon" href="img/logo.ico" sizes="16x16 24x24 36x36 48x48">
 
 <body>
+  <?php
+    session_start();
+    if($_SESSION['id'] != 1){
+      header('Location: index.php');
+    }
+  ?>
 	 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
       <div class="container">
           <a class="navbar-brand js-scroll-trigger" href="index.php">Archenation</a>
@@ -28,7 +34,7 @@
                   <a class="nav-link js-scroll-trigger" href="#">Tu carrito</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link js-scroll-trigger" href="#">Cerrar sesión</a>
+                  <a class="nav-link js-scroll-trigger" href="log">Cerrar sesión</a>
                 </li>
             </ul>
           </div>
