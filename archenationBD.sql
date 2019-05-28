@@ -41,7 +41,7 @@ CONSTRAINT pkArticulo PRIMARY KEY(idArticulo),
 CONSTRAINT verificarImagen CHECK (imagen ~ '[A-Za-z0-9ÁÉÍÓÚáéíóúüÜ]+.(jpg|jpeg|png|gif)$'),
 CONSTRAINT verificarPrecio CHECK (precio >= 0.00),
 CONSTRAINT verificarCantidad CHECK (cantidad >= 0),
-CONSTRAINT verificarDescuento CHECK (porcentajeDescuento => 0.0 AND porcentajeDescuento <= 100.0));
+CONSTRAINT verificarDescuento CHECK (porcentajeDescuento >= 0.0 AND porcentajeDescuento <= 100.0));
 
 CREATE TABLE venta(
 idVenta NUMERIC(3,0) NOT NULL,
