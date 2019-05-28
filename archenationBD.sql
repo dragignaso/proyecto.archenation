@@ -101,13 +101,15 @@ GRANT INSERT, SELECT, DELETE, UPDATE ON venta TO archenationclient;
 GRANT INSERT, SELECT, UPDATE, DELETE ON venta TO archenationuser;
 
 GRANT INSERT, SELECT,INSERT,UPDATE ON contenidoVenta TO archenationclient;
-GRANT INSERT, SELECT, UPDATE, INSERT ON contenidoVenta TO archenationuser;
+GRANT INSERT, SELECT, UPDATE, DELETE ON contenidoVenta TO archenationuser;
 
 GRANT SELECT, UPDATE, DELETE, INSERT ON usuario TO archenationadmin;
 GRANT SELECT, UPDATE, DELETE, INSERT ON articulo TO archenationadmin;
 GRANT SELECT, UPDATE, DELETE, INSERT ON entrega TO archenationadmin;
 GRANT SELECT, UPDATE, DELETE, INSERT ON venta TO archenationadmin;
 GRANT SELECT, UPDATE, DELETE, INSERT ON contenidoVenta TO archenationadmin;
+GRANT SELECT (idArticulo) ON articulo TO archenationclient;
+GRANT SELECT(idUsuario) ON usuario TO archenationclient;
 
 INSERT INTO usuario VALUES(1,'archeadmin00','5e11fe1a3872ea9a45da85ef85bbe1d6','Marvin','Rayas','Sanchez','5547139929','naruhina1189@gmail.com','Casa de Marvin','a','t');
 INSERT INTO articulo VALUES(1,'Arco Recurvo 30lb','Arco de PVC Industrial de 30 libras','arco1.jpg',600.00,30,'t',10.0,'t');
