@@ -42,14 +42,12 @@
     <div class="row">
 
       <div class="col-lg-3"><h2>_</h2>
-        <h1 class="my-4">Shop Name</h1>
+        <h1 class="my-4">Archenation Shop</h1>
         <div class="list-group">
-          <a href="#" class="list-group-item active">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
+          <a href="#" class="list-group-item active">Arcos recurvos</a>
+          <a href="#" class="list-group-item">Arcos de fantasía</a>
         </div>
       </div>
-      <!-- /.col-lg-3 -->
 
       <div class="col-lg-9"><h2>_</h2>
 
@@ -63,8 +61,6 @@
             4.0 stars
           </div>
         </div>
-        <!-- /.card -->
-
         <div class="card card-outline-secondary my-4">
           <div class="card-header">
             Product Reviews
@@ -82,10 +78,8 @@
             <a href="#" class="btn btn-success">Leave a Review</a>
           </div>
         </div>
-        <!-- /.card -->
 
       </div>
-      <!-- /.col-lg-9 -->
 
     </div>
 
