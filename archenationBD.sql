@@ -23,7 +23,6 @@ CONSTRAINT verificarCorreo CHECK (email ~ '^[A-Za-z0-9._%\-+!#$&/=?^|~]+@[A-Za-z
 CONSTRAINT verificarUsuario CHECK (usuario ~ '^[A-Za-z0-9]+[A-Za-z0-9_.$-]*$'),
 CONSTRAINT verificarNombre CHECK (nombre ~ '^[A-Za-zÁÉÍÓÚáéíóúüÜ]+[A-Za-zÁÉÍÓÚáéíóúüÜ ]*$'),
 CONSTRAINT verificarAPaterno CHECK (aPaterno ~ '^[A-Za-zÁÉÍÓÚáéíóúüÜ]+[A-Za-zÁÉÍÓÚáéíóúüÜ ]*$'),
-CONSTRAINT verificarAMaterno CHECK (aMaterno ~ '^[A-Za-zÁÉÍÓÚáéíóúüÜ]+[A-Za-zÁÉÍÓÚáéíóúüÜ ]*$'),
 CONSTRAINT verificarTelefono CHECK (telefono ~ '[0-9]{10,12}'),
 CONSTRAINT verificarRol CHECK (rol ~ 'c|a'));
 
@@ -31,7 +30,7 @@ CREATE TABLE articulo(
 idArticulo NUMERIC(2,0) NOT NULL,
 nombre VARCHAR(50) NOT NULL,
 descripcion VARCHAR(255) NOT NULL,
-imagen VARCHAR(255) NULL,
+imagen VARCHAR(255) NOT NULL,
 precio NUMERIC(7,2) NOT NULL,
 cantidad NUMERIC(3,0) NOT NULL,
 enDescuento BOOLEAN NOT NULL,
@@ -68,8 +67,7 @@ CONSTRAINT pkEntrega PRIMARY KEY(idEntrega),
 CONSTRAINT fkEntregaVenta FOREIGN KEY(idVenta) REFERENCES venta(idVenta)
 ON UPDATE CASCADE
 ON DELETE RESTRICT,
-CONSTRAINT verificarNombreEntrega CHECK (nombreReceptor ~ '^[A-Za-zÁÉÍÓÚáéíóúüÜ]+[A-Za-zÁÉÍÓÚáéíóúüÜ ]*$'),
-CONSTRAINT verificarFechaEntrega CHECK (fechaEntrega >= fechaEnvio));
+CONSTRAINT verificarNombreEntrega CHECK (nombreReceptor ~ '^[A-Za-zÁÉÍÓÚáéíóúüÜ]+[A-Za-zÁÉÍÓÚáéíóúüÜ ]*$'));
 
 CREATE TABLE contenidoVenta(
 idVenta NUMERIC(3,0) NOT NULL,

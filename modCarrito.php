@@ -15,10 +15,14 @@
         $precioFinal = $row[1];
         $descuento = $cantidad * $precioFinal;
 
+        echo ''.$cantidad."/".$precioFinal."/".$descuento;
+
         $queryconstotventa = "SELECT totalVenta FROM venta WHERE idVenta = ".$idVenta;
         $result = pg_query($conn, $queryconscontventa) or die (pg_last_error());
         $row = pg_fetch_row($result);
         $totalActual = $row[0];
+
+        echo ''.$totalActual;
 
         $descuento = $totalActual - $descuento;
 
@@ -27,7 +31,8 @@
 
         $result = pg_query($conn, $querycliente) or die (pg_last_error());
 
-        header("Location: carrito.php");
+
+        //header("Location: carrito.php");
 	}
 
 ?>
